@@ -19,6 +19,13 @@ namespace PJS.Managers
         private void Awake()
         {
             Bus<GoldIncreaseEvent>.OnEvent += GoldIncreaseRequest;
+            Bus<GoldDecreaseEvent>.OnEvent += GoldDecreaseRequest;
+        }
+
+        private void OnDestroy()
+        {
+            Bus<GoldIncreaseEvent>.OnEvent -= GoldIncreaseRequest;
+            Bus<GoldDecreaseEvent>.OnEvent -= GoldDecreaseRequest;
         }
 
         public void GoldIncreaseRequest(GoldIncreaseEvent evt)
@@ -33,8 +40,9 @@ namespace PJS.Managers
             }
             _gold += amount;
         }
-        public void GoldDecreaseRequest(int amount)
+        public void GoldDecreaseRequest(GoldDecreaseEvent evt)
         {
+            int amount = evt.amount;
             if (amount >= Gold)
             {
 #if UNITY_EDITOR

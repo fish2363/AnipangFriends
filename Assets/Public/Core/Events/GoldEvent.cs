@@ -12,4 +12,13 @@ namespace Code.Events
             this.amount = amount;
         }
     }
+    public struct GoldDecreaseEvent : IEvent
+    {
+        public int amount;
+
+        public GoldDecreaseEvent(int amount)
+        {
+            this.amount = amount;
+        }
+    }
 }
