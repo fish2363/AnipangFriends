@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class EnumDefine
+public enum PanDirection
 {
-    
+    Up,
+    Down,
+    Left,
+    Right,
 }
