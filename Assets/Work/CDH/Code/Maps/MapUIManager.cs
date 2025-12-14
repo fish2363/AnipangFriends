@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace Assets.Work.CDH.Code.Maps
     public class MapUIManager : MonoBehaviour
     {
         [SerializeField] private MapDataSO mapDataSO;
+        [SerializeField] private float cellSize = 10f;
 
         private CancellationTokenSource _cts;
         private Vector2 screenSize;
@@ -55,7 +57,7 @@ namespace Assets.Work.CDH.Code.Maps
         private Vector2Int GetTilePos(Vector2 mouseScreenPos)
         {
             Vector2 screenSize = new(Screen.width, Screen.height);
-            Vector2Int mouseQuad = GetQuadrantSign(mouseScreenPos, screenSize);
+            Vector2Int mouseQuad = new Vector2Int((mouseScreenPos.x / screenSize.x) > 0.5f ? 1 : -1, (mouseScreenPos.y / screenSize.y) > 0.5f ? 1 : -1);
 
             Vector2Int nearestTilePos = Vector2Int.zero;
             float bestSqr = float.MaxValue;
@@ -63,14 +65,11 @@ namespace Assets.Work.CDH.Code.Maps
 
             foreach (Vector2Int tilePos in mapDataSO.TileDatas.Values)
             {
-                // TODO: tilePos(그리드/셀)를 "스크린 좌표"로 바꿔야 함
-                Vector2 tileScreenPos = TileToScreenPos(tilePos);
-
-                Vector2Int tileQuad = GetQuadrantSign(tileScreenPos, screenSize);
+                Vector2Int tileQuad = new Vector2Int(tilePos.x > 0 ? 1 : -1, tilePos.y > 0 ? 1 : -1);
                 if (!IsSameQuadrant(tileQuad, mouseQuad))
                     continue;
 
-                float sqr = (mouseScreenPos - tileScreenPos).sqrMagnitude;
+                float sqr = (mouseScreenPos - tilePos).sqrMagnitude;
                 if (sqr < bestSqr)
                 {
                     bestSqr = sqr;
@@ -80,24 +79,6 @@ namespace Assets.Work.CDH.Code.Maps
             }
 
             return found ? nearestTilePos : Vector2Int.zero;
-        }
-
-
-        /// <summary>
-        ///  방향을 우상, 우하, 좌상, 좌우 4방향으로 나눠서 방향을 받는 코드
-        /// </summary>
-        /// <param name="screenPos"></param>
-        /// <param name="screenSize"></param>
-        /// <returns></returns>
-        private Vector2Int GetQuadrantSign(Vector2 screenPos, Vector2 screenSize)
-        {
-            // 0~1 정규화
-            Vector2 n = new Vector2(screenPos.x / screenSize.x, screenPos.y / screenSize.y);
-
-            // 화면 중심(0.5,0.5) 기준으로 우/좌, 상/하 판정
-            int sx = n.x >= 0.5f ? 1 : -1; // right / left
-            int sy = n.y >= 0.5f ? 1 : -1; // up / down
-            return new Vector2Int(sx, sy);
         }
 
         private bool IsSameQuadrant(Vector2Int a, Vector2Int b)
