@@ -419,6 +419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265009416}
   - component: {fileID: 1265009417}
+  - component: {fileID: 1265009418}
   m_Layer: 0
   m_Name: MapManager
   m_TagString: Untagged
@@ -458,6 +459,20 @@ MonoBehaviour:
   tilePrefab: {fileID: 9101329813654243334, guid: e5ca9dac939fcf444a91c8e4d358d714, type: 3}
   renderer: {fileID: 1788212556358816508, guid: e5ca9dac939fcf444a91c8e4d358d714, type: 3}
   TestGenerateTilePos: {x: 1, y: 0}
+--- !u!114 &1265009418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265009415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b65f38544e834e419dd0d0bb96cd675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapDataSO: {fileID: 11400000, guid: 67f0897cf10d9884eb90337184ea35e4, type: 2}
+  cellSize: 10
 --- !u!1 &1309212166
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af3a16c09c1ef243b76ce7f2028beaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos: {x: 0, y: 0}
+  <TileId>k__BackingField: 0
 --- !u!1 &1344500153
 GameObject:
   m_ObjectHideFlags: 0

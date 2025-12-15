@@ -23,10 +23,15 @@ namespace Assets.Work.CDH.Code.Maps
         public Vector2Int TestGenerateTilePos;
 
         private float tileSize;
+        private int tileKey;
 
         private float testTileSize => renderer.bounds.size.x;
+
+
         private void Awake()
         {
+            tileKey = 0;
+
             var renderer = tilePrefab.GetComponentInChildren<Renderer>();
             if (renderer != null)
             {
@@ -49,7 +54,7 @@ namespace Assets.Work.CDH.Code.Maps
         {
             Vector3 worldPos = GridPosToWorldPos(gridPos);
             Instantiate(tilePrefab, worldPos, Quaternion.identity, tilesParent);
-            mapDataSO.tileDatas.Add(gridPos);
+            // mapDataSO.TileDatas.Add(tileKey++, );
         }
 
         public Vector3 GridPosToWorldPos(Vector2Int gridPos)
