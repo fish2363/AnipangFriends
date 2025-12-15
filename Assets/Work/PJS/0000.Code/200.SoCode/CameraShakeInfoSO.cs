@@ -5,8 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CameraShakeInfoSO", menuName = "SO/Shake Info")]
 public class CameraShakeInfoSO : ScriptableObject
 {
-    public Camera camera;
-    public CinemachineImpulseChannels channels;
+    public CinemachineImpulseChannelPropertyAttribute channels;
     public CinemachineImpulseDefinition.ImpulseTypes impulseTypes;
     public float progationSpeed = 300f;
     public float dissipationDistance = 100f;

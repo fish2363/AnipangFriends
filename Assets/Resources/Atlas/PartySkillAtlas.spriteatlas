@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PartySkillAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 1
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 1
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2ee8a1d0d4a012f4ca79b225f5b68074, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - f16768b1fb28a274f91bc7f2c9520480: 21300000
+    - 62fca982c791b8d4184474381e674167: 21300000
+    - cb2d09a4a11b846428785bed5272b130: 21300000
+    - 1d4e8447b1475f34ca8806e56b09a5d6: 21300000
+    - 5a1debd7cb52d6c40ac22b3ab90eb699: 21300000
+    - d127dc4960e536d419b9986be104e527: 21300000
+    - bb01b779a7e737b468eb62524a658b24: 21300000
+    - 520c29b9d6ea5f74894850a51a7829b1: 21300000
+    - af82dbf99265aa646a90bb9fdcd8516e: 21300000
+    - 346453da06b7cd548ac0777677779664: 21300000
+    - 10a7731b7457d2c4eb2c90d8edb4b825: 21300000
+    - b23439ebbd763234aab8ef7d5b526878: 21300000
+    - 8b64f58c7510bf64b91b53fdb89fe3b4: 21300000
+    - 558ca7dd38f4b3042881a89c547cc271: 21300000
+    - 760da7ff557db0b4ba5a28a60f997941: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: f16768b1fb28a274f91bc7f2c9520480, type: 3}
+  - {fileID: 21300000, guid: 62fca982c791b8d4184474381e674167, type: 3}
+  - {fileID: 21300000, guid: cb2d09a4a11b846428785bed5272b130, type: 3}
+  - {fileID: 21300000, guid: 1d4e8447b1475f34ca8806e56b09a5d6, type: 3}
+  - {fileID: 21300000, guid: 5a1debd7cb52d6c40ac22b3ab90eb699, type: 3}
+  - {fileID: 21300000, guid: d127dc4960e536d419b9986be104e527, type: 3}
+  - {fileID: 21300000, guid: bb01b779a7e737b468eb62524a658b24, type: 3}
+  - {fileID: 21300000, guid: 520c29b9d6ea5f74894850a51a7829b1, type: 3}
+  - {fileID: 21300000, guid: af82dbf99265aa646a90bb9fdcd8516e, type: 3}
+  - {fileID: 21300000, guid: 346453da06b7cd548ac0777677779664, type: 3}
+  - {fileID: 21300000, guid: 10a7731b7457d2c4eb2c90d8edb4b825, type: 3}
+  - {fileID: 21300000, guid: b23439ebbd763234aab8ef7d5b526878, type: 3}
+  - {fileID: 21300000, guid: 8b64f58c7510bf64b91b53fdb89fe3b4, type: 3}
+  - {fileID: 21300000, guid: 558ca7dd38f4b3042881a89c547cc271, type: 3}
+  - {fileID: 21300000, guid: 760da7ff557db0b4ba5a28a60f997941, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - img_job_skill_gage_03
+  - img_job_skill_stroke_02
+  - img_job_skill_02
+  - img_job_skill_gage_04
+  - img_job_skill_stroke_05
+  - img_job_skill_stroke_01
+  - img_job_skill_05
+  - img_job_skill_stroke_03
+  - img_job_skill_gage_02
+  - img_job_skill_04
+  - img_job_skill_gage_01
+  - img_job_skill_03
+  - img_job_skill_gage_05
+  - img_job_skill_01
+  - img_job_skill_stroke_04
+  m_RenderDataMap: {}
+  m_Tag: PartySkillAtlas
+  m_IsVariant: 0

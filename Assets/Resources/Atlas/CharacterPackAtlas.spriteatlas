@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CharacterPackAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 1eacd5763a4895c418af9db6c330c06e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 0c8690606552469499f0f6808e4e26ee: 21300000
+    - a2934b11d0666164ab6f98f0d3465fa0: 21300000
+    - 8b54a7b3b7130d243ace23e0b7e4e64e: 21300000
+    - 7fa9cf9adc8214e458b8624f4f975490: 21300000
+    - 2674880cbe9cfc246a0f3fc1627d98c8: 21300000
+    - 4dc9a53f695cf2b41b595e63707e7e56: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 0c8690606552469499f0f6808e4e26ee, type: 3}
+  - {fileID: 21300000, guid: a2934b11d0666164ab6f98f0d3465fa0, type: 3}
+  - {fileID: 21300000, guid: 8b54a7b3b7130d243ace23e0b7e4e64e, type: 3}
+  - {fileID: 21300000, guid: 7fa9cf9adc8214e458b8624f4f975490, type: 3}
+  - {fileID: 21300000, guid: 2674880cbe9cfc246a0f3fc1627d98c8, type: 3}
+  - {fileID: 21300000, guid: 4dc9a53f695cf2b41b595e63707e7e56, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - CharacterPackReo_1
+  - CharacterPackPt_1
+  - CharacterPackBlue_1
+  - CharacterPackSky_1
+  - CharacterPackHunter_1
+  - CharacterPackLucy_1
+  m_RenderDataMap: {}
+  m_Tag: CharacterPackAtlas
+  m_IsVariant: 0
