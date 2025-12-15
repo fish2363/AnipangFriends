@@ -5,6 +5,11 @@ using Core.EventBus;
 public class ItemCounter : MonoBehaviour, IInteractable
 {
     [SerializeField] private ItemInfo itemInfo;
+
+    public void SetItem(ItemInfo item)
+    {
+        itemInfo = item;
+    }
     public void EnterInteractionRange()
     {
         
