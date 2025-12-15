@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CharacterPopup_Phantom
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b1a23c47413be4748977fd8e11e39969, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - e9ee063020e3f044e856dceaa786b374: 21300000
+    - 6a2cb621cd396b145af815e15041dd4f: 21300000
+    - d2b33f61548159e4ebbdb0c62e100aab: 21300000
+    - a035f25449f6a804eb6c23b0d814a420: 21300000
+    - 65e22315af70fb04c9a2d6d858864380: 21300000
+    - 951fec65940b98849bec9e79add8420c: 21300000
+    - 8d3b8fe92551e684c855e10167bce99c: 21300000
+    - d45d90f9891e5fe4e8d09348231d0194: 21300000
+    - 587117fa36be7284f810f5305c55a475: 21300000
+    - 343f842c9faca6b478c5d104519d412f: 21300000
+    - 63aa617cefedb3f4f90d1f18b94f466f: 21300000
+    - dc50f0ee44d53234fa133fdde789222e: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: e9ee063020e3f044e856dceaa786b374, type: 3}
+  - {fileID: 21300000, guid: 6a2cb621cd396b145af815e15041dd4f, type: 3}
+  - {fileID: 21300000, guid: d2b33f61548159e4ebbdb0c62e100aab, type: 3}
+  - {fileID: 21300000, guid: a035f25449f6a804eb6c23b0d814a420, type: 3}
+  - {fileID: 21300000, guid: 65e22315af70fb04c9a2d6d858864380, type: 3}
+  - {fileID: 21300000, guid: 951fec65940b98849bec9e79add8420c, type: 3}
+  - {fileID: 21300000, guid: 8d3b8fe92551e684c855e10167bce99c, type: 3}
+  - {fileID: 21300000, guid: d45d90f9891e5fe4e8d09348231d0194, type: 3}
+  - {fileID: 21300000, guid: 587117fa36be7284f810f5305c55a475, type: 3}
+  - {fileID: 21300000, guid: 343f842c9faca6b478c5d104519d412f, type: 3}
+  - {fileID: 21300000, guid: 63aa617cefedb3f4f90d1f18b94f466f, type: 3}
+  - {fileID: 21300000, guid: dc50f0ee44d53234fa133fdde789222e, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - img_pt_body
+  - img_bl_arm_fail
+  - img_pt_face
+  - img_pt_damage_mouth
+  - img_pt_arm_sword
+  - img_pt_arm_hammer
+  - img_pt_arm_none
+  - img_pt_arm
+  - img_pt_arm_wand
+  - img_pt_damage_face
+  - img_pt_arm_bow
+  - img_pt_arm_knife
+  m_RenderDataMap: {}
+  m_Tag: CharacterPopup_Phantom
+  m_IsVariant: 0

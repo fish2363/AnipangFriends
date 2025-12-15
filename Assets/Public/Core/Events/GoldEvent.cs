@@ -1,4 +1,5 @@
 using Core.EventBus;
+using System;
 using UnityEngine;
 
 namespace Code.Events
@@ -15,10 +16,12 @@ namespace Code.Events
     public struct GoldDecreaseEvent : IEvent
     {
         public int amount;
+        public Action<bool> ResultCallback;
 
-        public GoldDecreaseEvent(int amount)
+        public GoldDecreaseEvent(int amount, Action<bool> callback)
         {
             this.amount = amount;
+            this.ResultCallback = callback;
         }
     }
 }

@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RelicIconAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 1
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 1
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f050042874d70d5439c21d173419fe88, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - a3f96c1489557234483d771ad0703be2: 21300000
+    - 2d035797831bc5244816e0ad2419de7c: 21300000
+    - e7acbbf7b1d141741808fd85cd8a0dc0: 21300000
+    - 4c9d977a537afb1438033169a07b4cba: 21300000
+    - d2afae7bb81b5764ba74ee17685c4bc9: 21300000
+    - c3e1ab8ed3572c243aa8e2ec54a16648: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a3f96c1489557234483d771ad0703be2, type: 3}
+  - {fileID: 21300000, guid: 2d035797831bc5244816e0ad2419de7c, type: 3}
+  - {fileID: 21300000, guid: e7acbbf7b1d141741808fd85cd8a0dc0, type: 3}
+  - {fileID: 21300000, guid: 4c9d977a537afb1438033169a07b4cba, type: 3}
+  - {fileID: 21300000, guid: d2afae7bb81b5764ba74ee17685c4bc9, type: 3}
+  - {fileID: 21300000, guid: c3e1ab8ed3572c243aa8e2ec54a16648, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - RELIC_102
+  - RELIC_101
+  - RELIC_106
+  - RELIC_104
+  - RELIC_105
+  - RELIC_103
+  m_RenderDataMap: {}
+  m_Tag: RelicIconAtlas
+  m_IsVariant: 0

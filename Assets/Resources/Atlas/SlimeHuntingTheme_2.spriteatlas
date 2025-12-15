@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SlimeHuntingTheme_2
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 7b6168d8f7d8ff242b7eeae23cabd17c, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 9819e350b0c5261418ca656a246d6b49: 21300000
+    - 4818b681abdb45d468f8f58afbde255f: 21300000
+    - ddf314a1aea85104eb6a14f92df9ac02: 21300000
+    - 5524e2f135e7e1841a6ddcf2f7e13961: 21300000
+    - 0fb7a8828a3947f47915ee7d80423f6f: 21300000
+    - 623a7c33b4d7a0e428588c92285f6b48: 21300000
+    - 03870b639c0d64749b0bfd94c3deaa5e: 21300000
+    - 37a773d3af03a4e498f29011d905c6df: 21300000
+    - dacbb3d3fe3f6d540ad37025c5a274c6: 21300000
+    - c2aa6c5415c608b4dbfbf6c7d4b595d2: 21300000
+    - 496615e5005b312458a3214416643473: 21300000
+    - 1bdbdf66894f5bc4f84e739d49e1a62e: 21300000
+    - 6db71276c33e01d4c90ee6554a60fafd: 21300000
+    - c61e3fe810c81054781544b73cee88bf: 21300000
+    - 00d478e95c8aa7e48b8ef36a3d942f63: 21300000
+    - f54a446a965515743867640c84df9b79: 21300000
+    - 3194468a972dfe443be08a09f0560c01: 21300000
+    - b288e3baf4afd784e9ef761ff825e8e4: 21300000
+    - 065842eb5b859914f825448920972ebc: 21300000
+    - 9a5da24d74862ee45b5238ba825e5b4c: 21300000
+    - 05409d7d380ab3c44ad48e76aaac2665: 21300000
+    - 5b687a3e93946254f8c311b42e9fa00a: 21300000
+    - d22fd79e2c0ac3e48b8e5ac1461ee113: 21300000
+    - b0e7ab2f6c126474f90c97e1b87f26c4: 21300000
+    - 96e1395f3df717e4f8c81aa32ea33723: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9819e350b0c5261418ca656a246d6b49, type: 3}
+  - {fileID: 21300000, guid: 4818b681abdb45d468f8f58afbde255f, type: 3}
+  - {fileID: 21300000, guid: ddf314a1aea85104eb6a14f92df9ac02, type: 3}
+  - {fileID: 21300000, guid: 5524e2f135e7e1841a6ddcf2f7e13961, type: 3}
+  - {fileID: 21300000, guid: 0fb7a8828a3947f47915ee7d80423f6f, type: 3}
+  - {fileID: 21300000, guid: 623a7c33b4d7a0e428588c92285f6b48, type: 3}
+  - {fileID: 21300000, guid: 03870b639c0d64749b0bfd94c3deaa5e, type: 3}
+  - {fileID: 21300000, guid: 37a773d3af03a4e498f29011d905c6df, type: 3}
+  - {fileID: 21300000, guid: dacbb3d3fe3f6d540ad37025c5a274c6, type: 3}
+  - {fileID: 21300000, guid: c2aa6c5415c608b4dbfbf6c7d4b595d2, type: 3}
+  - {fileID: 21300000, guid: 496615e5005b312458a3214416643473, type: 3}
+  - {fileID: 21300000, guid: 1bdbdf66894f5bc4f84e739d49e1a62e, type: 3}
+  - {fileID: 21300000, guid: 6db71276c33e01d4c90ee6554a60fafd, type: 3}
+  - {fileID: 21300000, guid: c61e3fe810c81054781544b73cee88bf, type: 3}
+  - {fileID: 21300000, guid: 00d478e95c8aa7e48b8ef36a3d942f63, type: 3}
+  - {fileID: 21300000, guid: f54a446a965515743867640c84df9b79, type: 3}
+  - {fileID: 21300000, guid: 3194468a972dfe443be08a09f0560c01, type: 3}
+  - {fileID: 21300000, guid: b288e3baf4afd784e9ef761ff825e8e4, type: 3}
+  - {fileID: 21300000, guid: 065842eb5b859914f825448920972ebc, type: 3}
+  - {fileID: 21300000, guid: 9a5da24d74862ee45b5238ba825e5b4c, type: 3}
+  - {fileID: 21300000, guid: 05409d7d380ab3c44ad48e76aaac2665, type: 3}
+  - {fileID: 21300000, guid: 5b687a3e93946254f8c311b42e9fa00a, type: 3}
+  - {fileID: 21300000, guid: d22fd79e2c0ac3e48b8e5ac1461ee113, type: 3}
+  - {fileID: 21300000, guid: b0e7ab2f6c126474f90c97e1b87f26c4, type: 3}
+  - {fileID: 21300000, guid: 96e1395f3df717e4f8c81aa32ea33723, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - img_SlimeHunting_breakobj_c
+  - img_SlimeHunting_maptile_a1
+  - img_SlimeHunting_ribbon
+  - img_SlimeHunting_skill_item
+  - img_SlimeHunting_breakobj_b
+  - img_SlimeHunting_rank_me
+  - img_SlimeHunting_breakobj_a
+  - img_SlimeHunting_evidence_5
+  - img_SlimeHunting_reward_num_line
+  - img_SlimeHunting_maptile_a2
+  - img_SlimeHunting_reward_top_bg
+  - img_SlimeHunting_popup_bg
+  - img_SlimeHunting_evidence_4
+  - img_SlimeHunting_evidence_2
+  - img_SlimeHunting_evidence_3
+  - img_SlimeHunting_pop_title
+  - img_SlimeHunting_reward_bottom_bg
+  - img_SlimeHunting_reward_num_bg
+  - img_SlimeHunting_mission_frame
+  - img_SlimeHunting_reward_lineeff
+  - img_SlimeHunting_top_visual
+  - img_SlimeHunting_btn
+  - img_SlimeHunting_evidence_1
+  - img_SlimeHunting_reward_num_outline
+  - img_SlimeHunting_maptile_c
+  m_RenderDataMap: {}
+  m_Tag: SlimeHuntingTheme_2
+  m_IsVariant: 0
