@@ -18,10 +18,10 @@ namespace Code.Events
         public int amount;
         public Action<bool> ResultCallback;
 
-        public GoldDecreaseEvent(int amount, Action<bool> callback)
+        public GoldDecreaseEvent(int amount, Action<bool> resultCallback)
         {
             this.amount = amount;
-            this.ResultCallback = callback;
+            this.ResultCallback = resultCallback;
         }
     }
 }
