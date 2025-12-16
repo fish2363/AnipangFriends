@@ -1,0 +1,215 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CharacterAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: a6e4c80181f9602489746e90743b4771, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 9b1fa980ccaa6c94fa2b69f85db9684e: 21300000
+    - 9d0930a1e8a734442bff6bed48da0c88: 21300000
+    - d06f7f12be896eb4782c61a06ec7cf3e: 21300000
+    - e88e8822807227f4cb1e8301a23dfb50: 21300000
+    - af878552db393ef47bbae64bce1e564d: 21300000
+    - 35e547c2009e6144cba64500980daed9: 21300000
+    - f6b23ed27c07518458874f2a6cd00416: 21300000
+    - d8c48113ff7c0ee4eb6323825a594141: 21300000
+    - d4dcf8238e776b1429f386b2128f2113: 21300000
+    - 7b1c86933589f894c8cc8ac70081bca3: 21300000
+    - 147e56a3c54452a40ac4c864474d275b: 21300000
+    - 5e2922b445eeb13408854ceefd2d73d8: 21300000
+    - 242728b4e69f6f94ba8ba43dbf053526: 21300000
+    - df1621c4506a40a47abecff72dbf5e4d: 21300000
+    - 014019c482b46354b9d19834a404bc31: 21300000
+    - f0a951f4163390c4f8c58e18e320137c: 21300000
+    - ee658af48e4de144db43ec73a224348f: 21300000
+    - c119d12682ca1bd47ad8712c59fd9f7f: 21300000
+    - 8bb854268d3ce8442a0d7ff268500e2f: 21300000
+    - 7d3b886627510e04f8b86e5ae2af21c9: 21300000
+    - 6cb14b86dc1b2934fa03c17fc38b219f: 21300000
+    - 9c5404d61c431f04db8452a1ec2e2057: 21300000
+    - e552ec27653b31b48aa17189a163339e: 21300000
+    - 3a768fe7d9236b546bde2cf3bff77891: 21300000
+    - 0634ae281ea6b6643be30f53d5e4c4d0: 21300000
+    - ab81e038d46ac20439564969443527cb: 21300000
+    - 56cf22197061c794b981a8ee5ff5c4dd: 21300000
+    - a21d0f6943664cc448a373ff65aeb45f: 21300000
+    - d9632289867b01a4a994c1017182b009: 21300000
+    - 3f89fdc9ea9db6242b16b68e0c38ec18: 21300000
+    - be1dca6a7de4ebf458f49ab41b330e09: 21300000
+    - 896ab82bc59604142b8ab9b97bd29c6f: 21300000
+    - 56068f8b78c458b40b6073e53722f87e: 21300000
+    - fed82fcb08bea3a46b5f22c4335149a2: 21300000
+    - dc1befbc454b3474391892f99361cfd2: 21300000
+    - 8019e4cc7c7280f40ad51253970e03eb: 21300000
+    - 944eb04d61dfb0d42ab77a2bf7a3b4ac: 21300000
+    - b1b7254d31f3a2049bf8022d199d6604: 21300000
+    - 77da186d8f523c94d80ab288d861ec84: 21300000
+    - 972ecded7e78e0f4e9248ef2971e0ba3: 21300000
+    - 4b222e2e21349de469a06c9c21d35360: 21300000
+    - 7e1ac64e5dbc490478eacb8b4ce9e699: 21300000
+    - b983f1befaa436c48b8d32565e116f5c: 21300000
+    - 141fc3eeffa8f5240a5dea13cba2a301: 21300000
+    - 8aa8e13f55d3886489a0c48f045da700: 21300000
+    - 84d1544ff9401ab4fb68b133e55a22d1: 21300000
+    - 94493b4f6d8d0174c98b74b51f7008e0: 21300000
+    - 06933e9f8cde1cd49acce1157e106670: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9b1fa980ccaa6c94fa2b69f85db9684e, type: 3}
+  - {fileID: 21300000, guid: 9d0930a1e8a734442bff6bed48da0c88, type: 3}
+  - {fileID: 21300000, guid: d06f7f12be896eb4782c61a06ec7cf3e, type: 3}
+  - {fileID: 21300000, guid: e88e8822807227f4cb1e8301a23dfb50, type: 3}
+  - {fileID: 21300000, guid: af878552db393ef47bbae64bce1e564d, type: 3}
+  - {fileID: 21300000, guid: 35e547c2009e6144cba64500980daed9, type: 3}
+  - {fileID: 21300000, guid: f6b23ed27c07518458874f2a6cd00416, type: 3}
+  - {fileID: 21300000, guid: d8c48113ff7c0ee4eb6323825a594141, type: 3}
+  - {fileID: 21300000, guid: d4dcf8238e776b1429f386b2128f2113, type: 3}
+  - {fileID: 21300000, guid: 7b1c86933589f894c8cc8ac70081bca3, type: 3}
+  - {fileID: 21300000, guid: 147e56a3c54452a40ac4c864474d275b, type: 3}
+  - {fileID: 21300000, guid: 5e2922b445eeb13408854ceefd2d73d8, type: 3}
+  - {fileID: 21300000, guid: 242728b4e69f6f94ba8ba43dbf053526, type: 3}
+  - {fileID: 21300000, guid: df1621c4506a40a47abecff72dbf5e4d, type: 3}
+  - {fileID: 21300000, guid: 014019c482b46354b9d19834a404bc31, type: 3}
+  - {fileID: 21300000, guid: f0a951f4163390c4f8c58e18e320137c, type: 3}
+  - {fileID: 21300000, guid: ee658af48e4de144db43ec73a224348f, type: 3}
+  - {fileID: 21300000, guid: c119d12682ca1bd47ad8712c59fd9f7f, type: 3}
+  - {fileID: 21300000, guid: 8bb854268d3ce8442a0d7ff268500e2f, type: 3}
+  - {fileID: 21300000, guid: 7d3b886627510e04f8b86e5ae2af21c9, type: 3}
+  - {fileID: 21300000, guid: 6cb14b86dc1b2934fa03c17fc38b219f, type: 3}
+  - {fileID: 21300000, guid: 9c5404d61c431f04db8452a1ec2e2057, type: 3}
+  - {fileID: 21300000, guid: e552ec27653b31b48aa17189a163339e, type: 3}
+  - {fileID: 21300000, guid: 3a768fe7d9236b546bde2cf3bff77891, type: 3}
+  - {fileID: 21300000, guid: 0634ae281ea6b6643be30f53d5e4c4d0, type: 3}
+  - {fileID: 21300000, guid: ab81e038d46ac20439564969443527cb, type: 3}
+  - {fileID: 21300000, guid: 56cf22197061c794b981a8ee5ff5c4dd, type: 3}
+  - {fileID: 21300000, guid: a21d0f6943664cc448a373ff65aeb45f, type: 3}
+  - {fileID: 21300000, guid: d9632289867b01a4a994c1017182b009, type: 3}
+  - {fileID: 21300000, guid: 3f89fdc9ea9db6242b16b68e0c38ec18, type: 3}
+  - {fileID: 21300000, guid: be1dca6a7de4ebf458f49ab41b330e09, type: 3}
+  - {fileID: 21300000, guid: 896ab82bc59604142b8ab9b97bd29c6f, type: 3}
+  - {fileID: 21300000, guid: 56068f8b78c458b40b6073e53722f87e, type: 3}
+  - {fileID: 21300000, guid: fed82fcb08bea3a46b5f22c4335149a2, type: 3}
+  - {fileID: 21300000, guid: dc1befbc454b3474391892f99361cfd2, type: 3}
+  - {fileID: 21300000, guid: 8019e4cc7c7280f40ad51253970e03eb, type: 3}
+  - {fileID: 21300000, guid: 944eb04d61dfb0d42ab77a2bf7a3b4ac, type: 3}
+  - {fileID: 21300000, guid: b1b7254d31f3a2049bf8022d199d6604, type: 3}
+  - {fileID: 21300000, guid: 77da186d8f523c94d80ab288d861ec84, type: 3}
+  - {fileID: 21300000, guid: 972ecded7e78e0f4e9248ef2971e0ba3, type: 3}
+  - {fileID: 21300000, guid: 4b222e2e21349de469a06c9c21d35360, type: 3}
+  - {fileID: 21300000, guid: 7e1ac64e5dbc490478eacb8b4ce9e699, type: 3}
+  - {fileID: 21300000, guid: b983f1befaa436c48b8d32565e116f5c, type: 3}
+  - {fileID: 21300000, guid: 141fc3eeffa8f5240a5dea13cba2a301, type: 3}
+  - {fileID: 21300000, guid: 8aa8e13f55d3886489a0c48f045da700, type: 3}
+  - {fileID: 21300000, guid: 84d1544ff9401ab4fb68b133e55a22d1, type: 3}
+  - {fileID: 21300000, guid: 94493b4f6d8d0174c98b74b51f7008e0, type: 3}
+  - {fileID: 21300000, guid: 06933e9f8cde1cd49acce1157e106670, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - IMG_Character_3_Thumb
+  - IMG_Character_8
+  - IMG_Character_4_Equip
+  - IMG_Character_2
+  - img_levelup_3
+  - img_levelup_7
+  - IMG_Character_11_Equip
+  - IMG_Character_5
+  - img_levelup_8
+  - IMG_Character_2_Equip
+  - img_levelup_10
+  - IMG_Character_10
+  - IMG_Character_8_Equip
+  - IMG_Character_1
+  - IMG_Character_3
+  - img_frame_s
+  - IMG_Character_7
+  - IMG_Character_1_Equip
+  - IMG_Character_9_Equip
+  - IMG_Character_2_Thumb
+  - IMG_Character_10_Equip
+  - img_levelup_4
+  - IMG_Character_7_Thumb
+  - img_frame_hero_S
+  - IMG_Character_1_Thumb
+  - img_levelup_5
+  - IMG_Character_11
+  - IMG_Character_11_Thumb
+  - img_frame
+  - IMG_Character_9_Thumb
+  - IMG_Character_6_Equip
+  - IMG_Character_3_Equip
+  - IMG_Character_5_Thumb
+  - IMG_Character_4_Thumb
+  - img_levelup_1
+  - IMG_Character_6
+  - IMG_Character_6_Thumb
+  - IMG_Character_7_Equip
+  - IMG_Character_10_Thumb
+  - img_levelup_6
+  - img_levelup_9
+  - IMG_Character_9
+  - img_frame_hero_normal
+  - img_levelup_11
+  - IMG_Character_8_Thumb
+  - img_levelup_2
+  - IMG_Character_5_Equip
+  - IMG_Character_4
+  m_RenderDataMap: {}
+  m_Tag: CharacterAtlas
+  m_IsVariant: 0

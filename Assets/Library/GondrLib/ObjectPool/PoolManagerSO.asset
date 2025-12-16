@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6a008f709344ea9b0cc87ccd19a32a, type: 3}
   m_Name: PoolManagerSO
   m_EditorClassIdentifier: 
-  itemList: []
+  itemList:
+  - {fileID: 11400000, guid: 18a589eedb0c74f4cb6cf27b79de860b, type: 2}

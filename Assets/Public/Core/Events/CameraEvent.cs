@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Public.Core.Events
 {
-    public struct CameraEvent : IEvent
+    public struct ImpulseEvent : IEvent
     {
         public CameraShakeInfoSO shakeInfo;
 
-        public CameraEvent(CameraShakeInfoSO shakeInfo)
+        public ImpulseEvent(CameraShakeInfoSO shakeInfo)
         {
             this.shakeInfo = shakeInfo;
         }

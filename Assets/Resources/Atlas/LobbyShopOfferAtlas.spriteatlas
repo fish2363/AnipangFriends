@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LobbyShopOfferAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ce4b5fc5336fc4d4983b17cc7d2d3374, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 26ffb681538b35347a5440622c8cafce: 21300000
+    - 126ff0c1da3546449910e51067f3afeb: 21300000
+    - 8f8c3402448500b408b444e7eba8b64c: 21300000
+    - 3751ae7275a496c408b65c22b72a7c6e: 21300000
+    - 4214c1b216245e84999d090f71d888e5: 21300000
+    - c86c3ae242a469c4aba492955148b0cd: 21300000
+    - 2e8fd6f3f493c1741b04a46628c2f4b9: 21300000
+    - 0bc0bd34fd9f12a4bac5119622df4e52: 21300000
+    - 7834b6358a5536b46a3a0c00289c7f31: 21300000
+    - c1072b26f5d6fed49be53f8eec9a5c74: 21300000
+    - 03e6828770f072843beb103bab3e45fd: 21300000
+    - 1061c2f7f4c5ea544857d125c7ea24bc: 21300000
+    - f03bd1681a2a6df4f99754ce832122d3: 21300000
+    - 2429056855cd2bb45b9c2040656bc541: 21300000
+    - 06661c98001be7e428b789c2a7e3dcfe: 21300000
+    - 42fe93b8cf43c8a489ab86a84760654d: 21300000
+    - ebb7d4b9786d567419017c7848352734: 21300000
+    - d8be076ac7922ce498a78093c0cee159: 21300000
+    - 1d88498afc68f864aa025164ffcf8498: 21300000
+    - 8e5c2f8ad76a39c40ad809918ba80f97: 21300000
+    - 2eec331bba06a8e41b924f6a888dbead: 21300000
+    - 1e25e7cb3cb5b2a42ac6ea5d95784818: 21300000
+    - 8474a92cb8f376348ad21eaa35aeabce: 21300000
+    - fdb0895cb29cad5489ca112b230c106b: 21300000
+    - 6773be8f6a3d79f4cbf4c58050f44cc0: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 26ffb681538b35347a5440622c8cafce, type: 3}
+  - {fileID: 21300000, guid: 126ff0c1da3546449910e51067f3afeb, type: 3}
+  - {fileID: 21300000, guid: 8f8c3402448500b408b444e7eba8b64c, type: 3}
+  - {fileID: 21300000, guid: 3751ae7275a496c408b65c22b72a7c6e, type: 3}
+  - {fileID: 21300000, guid: 4214c1b216245e84999d090f71d888e5, type: 3}
+  - {fileID: 21300000, guid: c86c3ae242a469c4aba492955148b0cd, type: 3}
+  - {fileID: 21300000, guid: 2e8fd6f3f493c1741b04a46628c2f4b9, type: 3}
+  - {fileID: 21300000, guid: 0bc0bd34fd9f12a4bac5119622df4e52, type: 3}
+  - {fileID: 21300000, guid: 7834b6358a5536b46a3a0c00289c7f31, type: 3}
+  - {fileID: 21300000, guid: c1072b26f5d6fed49be53f8eec9a5c74, type: 3}
+  - {fileID: 21300000, guid: 03e6828770f072843beb103bab3e45fd, type: 3}
+  - {fileID: 21300000, guid: 1061c2f7f4c5ea544857d125c7ea24bc, type: 3}
+  - {fileID: 21300000, guid: f03bd1681a2a6df4f99754ce832122d3, type: 3}
+  - {fileID: 21300000, guid: 2429056855cd2bb45b9c2040656bc541, type: 3}
+  - {fileID: 21300000, guid: 06661c98001be7e428b789c2a7e3dcfe, type: 3}
+  - {fileID: 21300000, guid: 42fe93b8cf43c8a489ab86a84760654d, type: 3}
+  - {fileID: 21300000, guid: ebb7d4b9786d567419017c7848352734, type: 3}
+  - {fileID: 21300000, guid: d8be076ac7922ce498a78093c0cee159, type: 3}
+  - {fileID: 21300000, guid: 1d88498afc68f864aa025164ffcf8498, type: 3}
+  - {fileID: 21300000, guid: 8e5c2f8ad76a39c40ad809918ba80f97, type: 3}
+  - {fileID: 21300000, guid: 2eec331bba06a8e41b924f6a888dbead, type: 3}
+  - {fileID: 21300000, guid: 1e25e7cb3cb5b2a42ac6ea5d95784818, type: 3}
+  - {fileID: 21300000, guid: 8474a92cb8f376348ad21eaa35aeabce, type: 3}
+  - {fileID: 21300000, guid: fdb0895cb29cad5489ca112b230c106b, type: 3}
+  - {fileID: 21300000, guid: 6773be8f6a3d79f4cbf4c58050f44cc0, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - img_con_bg
+  - img_title_special_01
+  - img_nevi_off
+  - img_bg_special_05
+  - img_visual_01
+  - img_bg_special_02
+  - img_bg_special_01
+  - img_title_special_04
+  - img_nevi_on
+  - img_bg_special_01
+  - img_title_special_03
+  - img_bg_special_03
+  - img_title_special_05
+  - img_bg_special_04
+  - img_badge_time
+  - img_title_special_03
+  - img_title_special_02
+  - img_visual_02
+  - img_visual_02
+  - img_title_special_03-2
+  - img_title_special_03-1
+  - img_title_special_01
+  - img_bg_special_02
+  - img_bg_special_03
+  - img_title_special_02
+  m_RenderDataMap: {}
+  m_Tag: LobbyShopOfferAtlas
+  m_IsVariant: 0
