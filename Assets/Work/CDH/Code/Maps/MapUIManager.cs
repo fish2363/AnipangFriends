@@ -18,7 +18,6 @@ namespace Assets.Work.CDH.Code.Maps
         [SerializeField] private MapDataSO mapDataSO;
         [SerializeField] private Image tileImage;
         [SerializeField] private Transform tileImageParent;
-        [SerializeField] private float cellSize = 10f;
 
         private CancellationTokenSource _cts;
 
@@ -29,6 +28,8 @@ namespace Assets.Work.CDH.Code.Maps
         private Vector2 screenSize;
         private Vector2 defaultPos;
 
+        private float cellSize = 10f;
+
         private void Awake()
         {
             mapDataSO.Clear();
@@ -38,7 +39,13 @@ namespace Assets.Work.CDH.Code.Maps
             tile.CellPos = new Vector2Int(0, 0);
             tile.AnchoredPos = new Vector2(0, 0);
             mapDataSO.AddTileData(tile);
+
+            // GetWorldCorners로 정확한 타일 크기 가져오기
+            Vector3[] corners = new Vector3[4];
+            tileImage.rectTransform.GetWorldCorners(corners);
+            cellSize = Vector3.Distance(corners[0], corners[3]); // 세로 길이 기준 (또는 corners[0] ↔ corners[1]으로 가로)
         }
+
 
         private void SetScreenSize()
         {
