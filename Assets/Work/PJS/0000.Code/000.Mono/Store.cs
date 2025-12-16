@@ -7,6 +7,7 @@ public class Store : MonoBehaviour
     [SerializeField] private List<ItemCounter> counters;
     [SerializeField] private List<ItemWeightData> datas;
 
+    [ContextMenu("test init")]
     public void OnRoomInited()
     {
         List<ItemInfo> itemInfos = ShuffleItem(counters.Count);
