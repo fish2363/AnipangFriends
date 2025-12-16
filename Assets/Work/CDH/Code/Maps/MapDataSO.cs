@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Work.CDH.Code.Maps
@@ -15,6 +16,28 @@ namespace Assets.Work.CDH.Code.Maps
     [CreateAssetMenu(fileName = "MapDataSO", menuName = "SO/CDH/MapData")]
     public class MapDataSO : ScriptableObject
     {
-        public Dictionary<int, TileData> TileDatas { get; set; } = new();
+        private Dictionary<int, TileData> tileDatas { get; set; } = new();
+        private int curTileKey = 0;
+
+        public List<TileData> GetTileDatas()
+        {
+            return tileDatas.Values.ToList();
+        }
+
+        public void AddTileData(TileData tileData)
+        {
+            int tileKey = GenerateTileKey();
+            tileDatas.Add(tileKey, tileData);
+        }
+
+        public void Clear()
+        {
+            tileDatas.Clear();
+        }
+
+        private int GenerateTileKey()
+        {
+            return curTileKey++;
+        }
     }
 }
