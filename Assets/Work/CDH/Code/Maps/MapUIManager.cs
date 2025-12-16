@@ -3,6 +3,8 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static UnityEditorInternal.ReorderableList;
+
 
 
 #if UNITY_EDITOR
@@ -24,14 +26,24 @@ namespace Assets.Work.CDH.Code.Maps
         private Vector2 _previewAnchoredPos;
         private Image curImage;
 
+        private Vector2 screenSize;
+        private Vector2 defaultPos;
+
         private void Awake()
         {
             mapDataSO.Clear();
+            SetScreenSize();
 
             TileData tile = new();
             tile.CellPos = new Vector2Int(0, 0);
             tile.AnchoredPos = new Vector2(0, 0);
             mapDataSO.AddTileData(tile);
+        }
+
+        private void SetScreenSize()
+        {
+            screenSize = new(Screen.width, Screen.height);
+            defaultPos = screenSize / 2;
         }
 
         private void Update()
@@ -74,7 +86,7 @@ namespace Assets.Work.CDH.Code.Maps
                 GetNearestAndBuildableTile(mouse, out _previewCellPos, out _previewAnchoredPos);
                 print($"cellPos : {_previewCellPos}");
                 print($"anchoredpos : {_previewAnchoredPos}");
-                curImage.GetComponent<RectTransform>().position = _previewAnchoredPos;
+                curImage.GetComponent<RectTransform>().position = _previewAnchoredPos + defaultPos;
 
                 if (Mouse.current.leftButton.wasPressedThisFrame)
                 {
@@ -89,7 +101,6 @@ namespace Assets.Work.CDH.Code.Maps
 
         private void GetNearestAndBuildableTile(Vector2 mouseScreenPos, out Vector2Int outCellPos, out Vector2 outAnchoredPos)
         {
-            Vector2 screenSize = new(Screen.width, Screen.height);
             Vector2 mouseLocal = mouseScreenPos - screenSize * 0.5f;
 
             TileData bestTile = mapDataSO.GetTileDatas()[0];
@@ -167,13 +178,13 @@ namespace Assets.Work.CDH.Code.Maps
                 if (!HasTileAt(p))
                 {
                     outCellPos = p;
-                    outAnchoredPos = (screenSize / 2) + bestTile.AnchoredPos + (Vector2)dir * cellSize;
+                    outAnchoredPos = bestTile.AnchoredPos + (Vector2)dir * cellSize;
                     return;
                 }
             }
 
             outCellPos = basePos;
-            outAnchoredPos = (screenSize / 2) + bestTile.AnchoredPos;
+            outAnchoredPos = bestTile.AnchoredPos;
         }
     }
 }
