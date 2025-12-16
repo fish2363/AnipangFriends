@@ -43,13 +43,18 @@ namespace PJS.Managers
         public void GoldDecreaseRequest(GoldDecreaseEvent evt)
         {
             int amount = evt.amount;
-            if (amount >= Gold)
+            if (amount > Gold)
             {
 #if UNITY_EDITOR
                 Debug.Log("왜 없는 골드를 빼려는거죠?");
 #endif
+                evt.ResultCallback?.Invoke(false);
             }
-            _gold -= amount;
+            else
+            {
+                _gold -= amount;
+                evt.ResultCallback?.Invoke(true);
+            }
         }
     }
 }
