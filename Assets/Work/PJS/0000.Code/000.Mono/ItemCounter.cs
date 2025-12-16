@@ -4,9 +4,9 @@ using Code.Events;
 using Core.EventBus;
 public class ItemCounter : MonoBehaviour, IInteractable
 {
-    [SerializeField] private ItemInfo itemInfo;
+    [SerializeField] private ItemInfoSO itemInfo;
 
-    public void SetItem(ItemInfo item)
+    public void SetItem(ItemInfoSO item)
     {
         itemInfo = item;
     }

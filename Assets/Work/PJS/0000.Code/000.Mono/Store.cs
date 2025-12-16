@@ -10,16 +10,16 @@ public class Store : MonoBehaviour
     [ContextMenu("test init")]
     public void OnRoomInited()
     {
-        List<ItemInfo> itemInfos = ShuffleItem(counters.Count);
+        List<ItemInfoSO> itemInfos = ShuffleItem(counters.Count);
         for(int i = 0; i < itemInfos.Count; i++)
         {
             counters[i].SetItem(itemInfos[i]);
         }
     }
 
-    private List<ItemInfo> ShuffleItem(int count)
+    private List<ItemInfoSO> ShuffleItem(int count)
     {
-        List<ItemInfo> infos = new List<ItemInfo>(count);
+        List<ItemInfoSO> infos = new List<ItemInfoSO>(count);
         List<ItemWeightData> availableItems = new List<ItemWeightData>(datas);
 
         float totalWeight = 0;
@@ -37,7 +37,7 @@ public class Store : MonoBehaviour
 
             float val = Random.Range(0, totalWeight);
             float currentWeight = 0;
-            ItemWeightData removeTarget = default;
+            ItemWeightData? removeTarget = null;
 
             foreach (ItemWeightData weightData in availableItems)
             {
@@ -49,13 +49,13 @@ public class Store : MonoBehaviour
                 }
             }
 
-            if (removeTarget.itemInfo != null)
+            if (removeTarget  != null)
             {
-                infos.Add(removeTarget.itemInfo);
+                infos.Add(removeTarget.Value.itemInfo);
 
-                totalWeight -= removeTarget.weight;
+                totalWeight -= removeTarget.Value.weight;
 
-                availableItems.Remove(removeTarget);
+                availableItems.Remove(removeTarget.Value);
             }
         }
 

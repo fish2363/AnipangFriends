@@ -6,7 +6,7 @@ namespace Code.Data
     [Serializable]
     public struct ItemWeightData
     {
-        public ItemInfo itemInfo;
+        public ItemInfoSO itemInfo;
         public float weight;
     }
 }
