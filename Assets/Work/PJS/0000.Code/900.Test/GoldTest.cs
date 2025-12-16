@@ -21,8 +21,14 @@ namespace Test
         {
             Bus<GoldDecreaseEvent>.Raise(new GoldDecreaseEvent
             {
-                amount = _amount
+                amount = _amount,
+                ResultCallback = Decrease
             });
+        }
+
+        private void Decrease(bool result)
+        {
+            Debug.Log(result);
         }
     }
 }
