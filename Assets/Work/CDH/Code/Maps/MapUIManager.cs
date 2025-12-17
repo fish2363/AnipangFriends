@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using static UnityEditorInternal.ReorderableList;
+using UnityEngine.Events;
+
 
 
 
@@ -15,7 +17,7 @@ namespace Assets.Work.CDH.Code.Maps
 {
     public class MapUIManager : MonoBehaviour
     {
-        [SerializeField] private MapDataSO mapDataSO;
+        [SerializeField] private MapData mapData;
         [SerializeField] private Image tileImage;
         [SerializeField] private Transform tileImageParent;
 
@@ -32,13 +34,13 @@ namespace Assets.Work.CDH.Code.Maps
 
         private void Awake()
         {
-            mapDataSO.Clear();
+            mapData.Clear();
             SetScreenSize();
 
             TileData tile = new();
             tile.CellPos = new Vector2Int(0, 0);
             tile.AnchoredPos = new Vector2(0, 0);
-            mapDataSO.AddTileData(tile);
+            mapData.AddTileData(tile);
 
             // GetWorldCorners로 정확한 타일 크기 가져오기
             Vector3[] corners = new Vector3[4];
@@ -81,7 +83,7 @@ namespace Assets.Work.CDH.Code.Maps
             TileData tile = new();
             tile.CellPos = _previewCellPos;
             tile.AnchoredPos = _previewAnchoredPos;
-            mapDataSO.AddTileData(tile);
+            int tileKey = mapData.AddTileData(tile);
         }
 
         private async Awaitable StartAwaitable(CancellationToken ct)
@@ -110,9 +112,9 @@ namespace Assets.Work.CDH.Code.Maps
         {
             Vector2 mouseLocal = mouseScreenPos - screenSize * 0.5f;
 
-            TileData bestTile = mapDataSO.GetTileDatas()[0];
+            TileData bestTile = mapData.GetTileDatas()[0];
 
-            var tiles = mapDataSO.GetTileDatas();
+            var tiles = mapData.GetTileDatas();
             if (tiles.Count > 1)
             {
                 float bestSqr = float.MaxValue;
@@ -149,16 +151,6 @@ namespace Assets.Work.CDH.Code.Maps
                 }
             }
 
-            bool HasTileAt(Vector2Int cellPos)
-            {
-                foreach (var t in mapDataSO.GetTileDatas())
-                {
-                    if (t.CellPos == cellPos)
-                        return true;
-                }
-                return false;
-            }
-
             Vector2 delta = mouseLocal - bestTile.AnchoredPos;
 
             Vector2Int primary, secondary;
@@ -173,12 +165,12 @@ namespace Assets.Work.CDH.Code.Maps
                 secondary = (delta.x >= 0f) ? Vector2Int.right : Vector2Int.left;
             }
 
-            Vector2Int[] directions = new Vector2Int[]
+            Vector2Int[] directions = new Vector2Int[8]
             {
-        primary, secondary,
-        -secondary, -primary,
-        primary + secondary, primary - secondary,
-        -primary + secondary, -primary - secondary
+                primary, secondary,
+                -secondary, -primary,
+                primary + secondary, primary - secondary,
+                -primary + secondary, -primary - secondary
             };
 
             Vector2Int basePos = bestTile.CellPos;
@@ -201,6 +193,16 @@ namespace Assets.Work.CDH.Code.Maps
             // fallback
             outCellPos = basePos;
             outAnchoredPos = bestTile.AnchoredPos;
+        }
+
+        private bool HasTileAt(Vector2Int cellPos)
+        {
+            foreach (var t in mapData.GetTileDatas())
+            {
+                if (t.CellPos == cellPos)
+                    return true;
+            }
+            return false;
         }
     }
 }
