@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Assets.Work.CDH.Code.Maps
@@ -15,7 +16,7 @@ namespace Assets.Work.CDH.Code.Maps
     /// </summary>
     public class MapManager : MonoBehaviour
     {
-        [SerializeField] private MapDataSO mapDataSO;
+        [SerializeField] private MapData mapData;
         [SerializeField] private Transform tilesParent;
         [SerializeField] private GameObject tilePrefab;
         [SerializeField] private Renderer renderer;
@@ -26,7 +27,6 @@ namespace Assets.Work.CDH.Code.Maps
         private int tileKey;
 
         private float testTileSize => renderer.bounds.size.x;
-
 
         private void Awake()
         {
@@ -42,17 +42,19 @@ namespace Assets.Work.CDH.Code.Maps
                 Debug.LogWarning("tilePrefab¿¡ Renderer X, use default value");
                 tileSize = 1;
             }
+
+            mapData.OnAddTileData += HandleAddTile;
         }
 
-        [ContextMenu("GenerateTile")]
-        private void TestGenerate()
+        private void HandleAddTile(TileData newTile)
         {
-            GenerateTile(TestGenerateTilePos);
+            GenerateTile(newTile);
         }
 
-        public void GenerateTile(Vector2Int gridPos)
+        public void GenerateTile(TileData tile)
         {
-            Vector3 worldPos = GridPosToWorldPos(gridPos);
+            Vector2Int tilePos = tile.CellPos;
+            Vector3 worldPos = GridPosToWorldPos(tilePos);
             Instantiate(tilePrefab, worldPos, Quaternion.identity, tilesParent);
             // mapDataSO.TileDatas.Add(tileKey++, );
         }
