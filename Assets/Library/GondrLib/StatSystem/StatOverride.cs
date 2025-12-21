@@ -1,31 +1,30 @@
 using System;
+using GondrLib.StatSystem;
 using UnityEngine;
 
-namespace GondrLib.StatSystem
+namespace Blade.Core.StatSystem
 {
     [Serializable]
     public class StatOverride
     {
         [SerializeField] private StatSO stat;
         [SerializeField] private bool isUseOverride;
-        [SerializeField] private float overrideValue;
-        
-        public string StatName => stat.statName;
-        public StatOverride(StatSO stat) => this.stat = stat; //생성자
+        [SerializeField] private float overrideBaseValue;
 
-        //기본 에셋인 SO 를 클론해서 오버라이드 하거나 기본값으로 만들어주는 매서드
-        public StatSO CreateStat()
+        public StatSO Stat => stat;
+        public StatOverride(StatSO stat) => this.stat = stat;
+
+        public StatSO CreateStat() //스탯 복제후 오버라이드 값을 넣어서 리턴해준다.
         {
-            StatSO newStat = stat.Clone() as StatSO; //클론 만들어야 한다.
-            Debug.Assert(newStat != null, $"{nameof(newStat)} stat cloning failed");
+            StatSO newStat = stat.Clone() as StatSO;
+            Debug.Assert(newStat != null, $"{nameof(newStat)} stat clone failed");
 
             if (isUseOverride)
             {
-                newStat.BaseValue = overrideValue;
+                newStat.BaseValue = overrideBaseValue;
             }
 
             return newStat;
         }
-
     }
 }
