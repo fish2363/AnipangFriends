@@ -1,4 +1,5 @@
 using GondrLib.ObjectPool.RunTime;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Code.Item
@@ -33,12 +34,22 @@ namespace Code.Item
 
         public void DropCoin(Vector3 direction, float power)
         {
+            _rigid.angularVelocity = Vector3.zero;
+            _rigid.linearVelocity = Vector3.zero;
             _rigid.AddForce(direction.normalized * power, ForceMode.Impulse);
         }
 
         private void OnCollisionEnter(Collision collision)
         {
-            
+            //태스크 실행하기
+        }
+
+        private void PushPool()
+        {
+            //Task 죽이기
+            _rigid.linearVelocity = Vector3.zero;
+            _rigid.angularVelocity = Vector3.zero;
+            _pool.Push(this);
         }
     }
 }
