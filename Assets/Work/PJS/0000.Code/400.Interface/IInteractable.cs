@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Code.Interface
 {
-    public interface IInteractable
+    public interface ICollectable
     {
         public void OnInteract();
         public void EnterInteractionRange();

@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using GondrLib.ObjectPool.RunTime;
+using Core.EventBus;
 
 namespace Code.Component
 {
@@ -8,9 +9,10 @@ namespace Code.Component
     {
         [SerializeField]
         private PoolItemSO coinPrefab;
+        [SerializeField] private int _amount;
         public void CreateFeedback()
         {
-
+            DropItem(_amount);
         }
 
         public void StopFeedback()
@@ -18,9 +20,9 @@ namespace Code.Component
 
         }
 
-        private void DropItem()
+        private void DropItem(int amount)
         {
-
+            Bus<SpawnGoldEvt>.Raise(new SpawnGoldEvt(coinPrefab, amount));
         }
     }
 }

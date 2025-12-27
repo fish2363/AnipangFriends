@@ -2,7 +2,7 @@ using UnityEngine;
 using Code.Interface;
 using Code.Events;
 using Core.EventBus;
-public class ItemCounter : MonoBehaviour, IInteractable
+public class ItemCounter : MonoBehaviour, Code.Interface.ICollectable
 {
     [SerializeField] private ItemInfoSO itemInfo;
 

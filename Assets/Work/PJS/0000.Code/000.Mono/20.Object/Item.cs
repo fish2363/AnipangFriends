@@ -1,3 +1,7 @@
+using Code.Events;
+using Code.Interface;
+using Core.EventBus;
+using Cysharp.Threading.Tasks;
 using GondrLib.ObjectPool.RunTime;
 using Unity.Mathematics;
 using UnityEngine;
@@ -5,7 +9,7 @@ using UnityEngine;
 namespace Code.Item
 {
     [RequireComponent(typeof(Rigidbody), typeof(Collider))]
-    public class Item : MonoBehaviour, IPoolable
+    public class Item : MonoBehaviour, IPoolable, ICollectable
     {
         #region Pool
         [field: SerializeField]
@@ -41,7 +45,7 @@ namespace Code.Item
 
         private void OnCollisionEnter(Collision collision)
         {
-            //태스크 실행하기
+            //self destory
         }
 
         private void PushPool()
@@ -50,6 +54,10 @@ namespace Code.Item
             _rigid.linearVelocity = Vector3.zero;
             _rigid.angularVelocity = Vector3.zero;
             _pool.Push(this);
+        }
+        public void Collect()
+        {
+            Bus<GoldIncreaseEvent>.Raise(new GoldIncreaseEvent(1));
         }
     }
 }
