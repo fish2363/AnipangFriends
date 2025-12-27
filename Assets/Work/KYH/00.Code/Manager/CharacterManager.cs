@@ -1,16 +1,38 @@
+using System;
 using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private PlayerInputSO InputSO;
+    [SerializeField] private Entity _entity;
+    [SerializeField] private CharacterSO[] testCharacter;
+    private int testIdx;
+
+    private void Awake()
     {
-        
+        InputSO.OnChangePressed += ChangeMainCharacter;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        InputSO.OnChangePressed -= ChangeMainCharacter;
+    }
+
+    private void ChangeMainCharacter()
+    {
+        if (testCharacter == null || testCharacter.Length == 0)
+        {
+            Debug.LogWarning("[CharacterManager] No characters assigned.");
+            return;
+        }
+
+        testIdx++;
+
+        if (testIdx >= testCharacter.Length)
+            testIdx = 0;
+
+        _entity.ChangeInfo(testCharacter[testIdx]);
+
+        Debug.Log($"[ChangeMainCharacter] Changed to index {testIdx}");
     }
 }

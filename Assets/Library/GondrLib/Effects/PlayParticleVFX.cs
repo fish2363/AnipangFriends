@@ -1,37 +1,34 @@
 using UnityEngine;
 
-namespace GondrLib.Effects
+public class PlayParticleVFX : MonoBehaviour
 {
-    public class PlayParticleVFX : MonoBehaviour, IPlayableVFX
-    {
-        [field:SerializeField] public string VfxName { get; private set; }
-        [SerializeField] private bool isOnPosition;
+    [field:SerializeField] public string VfxName { get; private set; }
+    [SerializeField] private bool isOnPosition;
 
-        [SerializeField] private ParticleSystem[] particles;
+    [SerializeField] private ParticleSystem[] particles;
         
-        public void PlayVFX(Vector3 position, Quaternion rotation)
-        {
-            if(isOnPosition == false)
-                transform.SetPositionAndRotation(position, rotation);
+    public void PlayVFX(Vector3 position, Quaternion rotation)
+    {
+        if(isOnPosition == false)
+            transform.SetPositionAndRotation(position, rotation);
 
-            foreach (ParticleSystem particle in particles)
-            {
-                particle.Play();
-            }
-        }
-
-        public void StopVFX()
+        foreach (ParticleSystem particle in particles)
         {
-            foreach (ParticleSystem particle in particles)
-            {
-                particle.Stop();
-            }
+            particle.Play();
         }
+    }
 
-        private void OnValidate()
+    public void StopVFX()
+    {
+        foreach (ParticleSystem particle in particles)
         {
-            if(string.IsNullOrEmpty(VfxName)  == false)
-                gameObject.name = VfxName;
+            particle.Stop();
         }
+    }
+
+    private void OnValidate()
+    {
+        if(string.IsNullOrEmpty(VfxName)  == false)
+            gameObject.name = VfxName;
     }
 }

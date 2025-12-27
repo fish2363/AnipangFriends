@@ -12,10 +12,19 @@ public abstract class Entity : MonoBehaviour
 
     public bool IsDead { get; set; }
     protected Dictionary<Type, IEntityComponent> _components;
+    protected List<IChangableInfo> _changeInfos=new();
 
     public void EntityDestroy()
     {
         Destroy(gameObject);
+    }
+
+    public void ChangeInfo(CharacterSO info)
+    {
+        foreach(IChangableInfo changable in _changeInfos)
+        {
+            changable.Change(info);
+        }
     }
 
     protected virtual void Awake()
@@ -23,9 +32,15 @@ public abstract class Entity : MonoBehaviour
         _components = new Dictionary<Type, IEntityComponent>();
         AddComponents();
         InitializeComponents();
+        GetChangableComponents();
         AfterInitializeComponents();
     }
 
+    private void GetChangableComponents()
+    {
+        GetComponentsInChildren<IChangableInfo>().ToList()
+            .ForEach(component => _changeInfos.Add(component));
+    }
 
     protected virtual void AddComponents()
     {
