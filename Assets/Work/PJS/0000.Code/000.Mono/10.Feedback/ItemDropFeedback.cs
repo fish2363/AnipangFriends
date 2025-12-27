@@ -10,6 +10,8 @@ namespace Code.Component
         [SerializeField]
         private PoolItemSO coinPrefab;
         [SerializeField] private int _amount;
+
+        [ContextMenu("spawnGold")]
         public void CreateFeedback()
         {
             DropItem(_amount);
