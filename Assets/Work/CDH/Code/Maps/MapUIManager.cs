@@ -7,9 +7,17 @@ namespace Assets.Work.CDH.Code.Maps
 {
     public class MapUIManager : MonoBehaviour
     {
+        [Header("Settings")]
+        [SerializeField] private int grid;
+        [SerializeField] private float tileInterval;
+
+        [Header("ETC...")]
         [SerializeField] private MapData mapData;
         [SerializeField] private Image tileImage;
-        [SerializeField] private Transform tileImageParent;
+        [SerializeField] private Image backgroundImage;
+        [SerializeField] private Transform mapUIParent;
+        [SerializeField] private Canvas canvas;
+        [SerializeField] private Image tileBackground;
 
         private CancellationTokenSource _cts;
 
@@ -20,28 +28,59 @@ namespace Assets.Work.CDH.Code.Maps
         private Vector2 screenSize;
         private Vector2 defaultPos;
 
+        #region UIs
+        private Vector2 backgroundSize;
+        private Transform tileUIParent;
+        #endregion
+
         private float cellSize = 10f;
+
+        // added
+        private float step;      // cellSize + tileInterval
+        private int minX, maxX;  // allowed cell range
+        private int minY, maxY;
 
         private void Awake()
         {
             mapData.Clear();
             SetScreenSize();
 
-            TileData tile = new();
-            tile.CellPos = new Vector2Int(0, 0);
-            tile.AnchoredPos = new Vector2(0, 0);
-            mapData.AddTileData(tile);
-
             // GetWorldCorners로 정확한 타일 크기 가져오기
             Vector3[] corners = new Vector3[4];
             tileImage.rectTransform.GetWorldCorners(corners);
-            cellSize = Vector3.Distance(corners[0], corners[3]); // 세로 길이 기준 (또는 corners[0] ↔ corners[1]으로 가로)
-        }
+            cellSize = Vector3.Distance(corners[0], corners[3]);
 
+            // spacing step
+            step = cellSize + tileInterval;
+
+            // grid range (centered at 0,0)
+            minX = -grid / 2;
+            maxX = minX + grid - 1;
+            minY = -grid / 2;
+            maxY = minY + grid - 1;
+
+            // background size (interval count is grid-1)
+            backgroundSize = new Vector2(
+            cellSize* grid + tileInterval * (grid + 1),
+            cellSize* grid + tileInterval * (grid + 1)
+            );
+
+            Image background = Instantiate(backgroundImage, mapUIParent);
+            tileUIParent = background.transform;
+            tileUIParent.localPosition = Vector3.zero;
+            (tileUIParent as RectTransform).sizeDelta = backgroundSize;
+
+            CreateTileBackgroundGrid();
+
+            Image centerTile = Instantiate(tileImage, tileUIParent);
+            centerTile.rectTransform.anchoredPosition = CellToAnchoredPos(Vector2Int.zero);
+
+            BuildTile(Vector2Int.zero, CellToAnchoredPos(Vector2Int.zero));
+        }
 
         private void SetScreenSize()
         {
-            screenSize = new(Screen.width, Screen.height);
+            screenSize = new Vector2(Screen.width, Screen.height);
             defaultPos = screenSize / 2;
         }
 
@@ -57,7 +96,7 @@ namespace Assets.Work.CDH.Code.Maps
         {
             Cancel();
             _cts = new CancellationTokenSource();
-            curImage = Instantiate(tileImage, tileImageParent);
+            curImage = Instantiate(tileImage, tileUIParent);
             _ = StartAwaitable(_cts.Token);
         }
 
@@ -68,12 +107,23 @@ namespace Assets.Work.CDH.Code.Maps
             _cts = null;
         }
 
+        private void BuildTile(Vector2Int cellPos, Vector2 anchoredPos)
+        {
+            _previewCellPos = cellPos;
+            _previewAnchoredPos = anchoredPos;
+
+            BuildTile();
+        }
+
         private void BuildTile()
         {
+            if (!IsInGrid(_previewCellPos)) return;
+            if (mapData.ContainsCellPos(_previewCellPos)) return;
+
             TileData tile = new();
             tile.CellPos = _previewCellPos;
             tile.AnchoredPos = _previewAnchoredPos;
-            int tileKey = mapData.AddTileData(tile);
+            mapData.AddTileData(tile);
         }
 
         private async Awaitable StartAwaitable(CancellationToken ct)
@@ -82,12 +132,13 @@ namespace Assets.Work.CDH.Code.Maps
             {
                 Vector2 mouse = Mouse.current.position.ReadValue();
 
-                GetNearestAndBuildableTile(mouse, out _previewCellPos, out _previewAnchoredPos);
-                print($"cellPos : {_previewCellPos}");
-                print($"anchoredpos : {_previewAnchoredPos}");
-                curImage.GetComponent<RectTransform>().position = _previewAnchoredPos + defaultPos;
+                bool canBuild = TryGetNearestAndBuildableTile(mouse, out _previewCellPos, out _previewAnchoredPos);
 
-                if (Mouse.current.leftButton.wasPressedThisFrame)
+                curImage.enabled = canBuild;
+                if (canBuild)
+                    curImage.rectTransform.anchoredPosition = _previewAnchoredPos;
+
+                if (Mouse.current.leftButton.wasPressedThisFrame && canBuild)
                 {
                     Cancel();
                     BuildTile();
@@ -98,44 +149,52 @@ namespace Assets.Work.CDH.Code.Maps
             }
         }
 
-        private void GetNearestAndBuildableTile(Vector2 mouseScreenPos, out Vector2Int outCellPos, out Vector2 outAnchoredPos)
+        private bool TryGetNearestAndBuildableTile(Vector2 mouseScreenPos, out Vector2Int outCellPos, out Vector2 outAnchoredPos)
         {
-            Vector2 mouseLocal = mouseScreenPos - screenSize * 0.5f;
-
-            TileData bestTile = mapData.GetTileDatas()[0];
+            Vector2 mouseLocal = GetMouseLocalInTileParent(mouseScreenPos);
 
             var tiles = mapData.GetTileDatas();
+            if (tiles == null || tiles.Count == 0)
+            {
+                outCellPos = default;
+                outAnchoredPos = default;
+                return false;
+            }
+
+            TileData bestTile = tiles[0];
+
             if (tiles.Count > 1)
             {
                 float bestSqr = float.MaxValue;
                 Vector2Int mouseQuad = new Vector2Int(mouseLocal.x >= 0f ? 1 : -1, mouseLocal.y >= 0f ? 1 : -1);
                 bool foundInQuad = false;
 
-                foreach (var tileData in tiles)
+                for (int i = 0; i < tiles.Count; i++)
                 {
-                    Vector2Int tileQuad = new Vector2Int(tileData.AnchoredPos.x >= 0f ? 1 : -1, tileData.AnchoredPos.y >= 0f ? 1 : -1);
-                    if (!mouseQuad.Equals(tileQuad)) continue;
+                    var t = tiles[i];
+                    Vector2Int tileQuad = new Vector2Int(t.AnchoredPos.x >= 0f ? 1 : -1, t.AnchoredPos.y >= 0f ? 1 : -1);
+                    if (mouseQuad != tileQuad) continue;
 
                     foundInQuad = true;
-
-                    float sqr = (mouseLocal - tileData.AnchoredPos).sqrMagnitude;
+                    float sqr = (mouseLocal - t.AnchoredPos).sqrMagnitude;
                     if (sqr < bestSqr)
                     {
                         bestSqr = sqr;
-                        bestTile = tileData;
+                        bestTile = t;
                     }
                 }
 
                 if (!foundInQuad)
                 {
                     bestSqr = float.MaxValue;
-                    foreach (var tileData in tiles)
+                    for (int i = 0; i < tiles.Count; i++)
                     {
-                        float sqr = (mouseLocal - tileData.AnchoredPos).sqrMagnitude;
+                        var t = tiles[i];
+                        float sqr = (mouseLocal - t.AnchoredPos).sqrMagnitude;
                         if (sqr < bestSqr)
                         {
                             bestSqr = sqr;
-                            bestTile = tileData;
+                            bestTile = t;
                         }
                     }
                 }
@@ -165,34 +224,72 @@ namespace Assets.Work.CDH.Code.Maps
 
             Vector2Int basePos = bestTile.CellPos;
 
-            // 넓은 범위로 순차적으로 검사
-            for (int distance = 1; distance <= 10; distance++) // 10은 최대 거리, 필요시 조절 가능
+            for (int distance = 1; distance <= 3; distance++)
             {
-                foreach (var dir in directions)
+                for (int i = 0; i < directions.Length; i++)
                 {
-                    Vector2Int p = basePos + dir * distance;
-                    if (!HasTileAt(p))
-                    {
-                        outCellPos = p;
-                        outAnchoredPos = bestTile.AnchoredPos + (Vector2)dir * cellSize * distance;
-                        return;
-                    }
+                    Vector2Int p = basePos + directions[i] * distance;
+
+                    if (!IsInGrid(p)) continue;
+                    if (mapData.ContainsCellPos(p)) continue;
+
+                    outCellPos = p;
+                    outAnchoredPos = CellToAnchoredPos(p);
+                    return true;
                 }
             }
 
-            // fallback
             outCellPos = basePos;
             outAnchoredPos = bestTile.AnchoredPos;
+            return false;
         }
 
-        private bool HasTileAt(Vector2Int cellPos)
+        private Vector2 GetMouseLocalInTileParent(Vector2 mouseScreenPos)
         {
-            foreach (var t in mapData.GetTileDatas())
+            RectTransform rt = (RectTransform)tileUIParent;
+
+            Camera cam = null;
+            if (canvas != null && canvas.renderMode != RenderMode.ScreenSpaceOverlay)
+                cam = canvas.worldCamera;
+
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(rt, mouseScreenPos, cam, out Vector2 local);
+            return local;
+        }
+
+        private void CreateTileBackgroundGrid()
+        {
+            if (tileBackground == null) return;
+
+            // grid 전체 셀에 대해 배경 생성
+            for (int y = minY; y <= maxY; y++)
             {
-                if (t.CellPos == cellPos)
-                    return true;
+                for (int x = minX; x <= maxX; x++)
+                {
+                    Vector2Int cell = new Vector2Int(x, y);
+
+                    Image bg = Instantiate(tileBackground, tileUIParent);
+
+                    RectTransform rt = bg.rectTransform;
+                    rt.anchoredPosition = CellToAnchoredPos(cell);
+
+                    // 배경 칸 크기를 타일과 동일하게 맞추고 싶으면
+                    rt.sizeDelta = new Vector2(cellSize, cellSize);
+
+                    // 혹시라도 배경이 타일 위로 올라오면 맨 뒤로 보내기
+                    rt.SetAsFirstSibling();
+                }
             }
-            return false;
+        }
+
+        private bool IsInGrid(Vector2Int cellPos)
+        {
+            return cellPos.x >= minX && cellPos.x <= maxX &&
+                   cellPos.y >= minY && cellPos.y <= maxY;
+        }
+
+        private Vector2 CellToAnchoredPos(Vector2Int cellPos)
+        {
+            return new Vector2(cellPos.x * step, cellPos.y * step);
         }
     }
 }
