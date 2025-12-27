@@ -1,17 +1,7 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using static UnityEditorInternal.ReorderableList;
-using UnityEngine.Events;
-
-
-
-
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 namespace Assets.Work.CDH.Code.Maps
 {
@@ -57,8 +47,8 @@ namespace Assets.Work.CDH.Code.Maps
 
         private void Update()
         {
-            if(Keyboard.current.bKey.wasPressedThisFrame)
-            { 
+            if (Keyboard.current.bKey.wasPressedThisFrame)
+            {
                 StartBuildTile();
             }
         }

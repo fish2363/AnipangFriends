@@ -490,8 +490,8 @@ MonoBehaviour:
   mapData: {fileID: 2053520450}
   tilesParent: {fileID: 1009448697}
   tilePrefab: {fileID: 9101329813654243334, guid: e5ca9dac939fcf444a91c8e4d358d714, type: 3}
-  renderer: {fileID: 1788212556358816508, guid: e5ca9dac939fcf444a91c8e4d358d714, type: 3}
-  TestGenerateTilePos: {x: 1, y: 0}
+  bridgePrefab: {fileID: 7849806968520529483, guid: d06906338c947404f97b6d931a40fcf4, type: 3}
+  bridgeYOffset: 0.01
 --- !u!114 &1265009418
 MonoBehaviour:
   m_ObjectHideFlags: 0
